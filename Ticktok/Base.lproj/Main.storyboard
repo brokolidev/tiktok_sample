@@ -56,7 +56,22 @@
                     <view key="view" contentMode="scaleToFill" id="FII-k8-vOL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItS-Wc-tYG" userLabel="Player Container">
+                                <rect key="frame" x="0.0" y="353" width="414" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="DXE-Ps-FUi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="b0f-Nt-vuN" firstAttribute="trailing" secondItem="ItS-Wc-tYG" secondAttribute="trailing" id="EZ0-lc-6d9"/>
+                            <constraint firstItem="ItS-Wc-tYG" firstAttribute="centerX" secondItem="b0f-Nt-vuN" secondAttribute="centerX" id="Yuu-LY-6KT"/>
+                            <constraint firstItem="ItS-Wc-tYG" firstAttribute="leading" secondItem="b0f-Nt-vuN" secondAttribute="leading" id="kRo-eb-Xvg"/>
+                            <constraint firstItem="ItS-Wc-tYG" firstAttribute="centerY" secondItem="b0f-Nt-vuN" secondAttribute="centerY" id="mRO-Wg-cJQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b0f-Nt-vuN"/>
                     </view>
                 </viewController>
