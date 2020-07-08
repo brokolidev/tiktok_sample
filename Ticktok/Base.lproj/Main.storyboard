@@ -59,9 +59,17 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItS-Wc-tYG" userLabel="Player Container">
                                 <rect key="frame" x="0.0" y="353" width="414" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TsJ-GY-xHw">
+                                        <rect key="frame" x="199.5" y="91.5" width="15" height="16.5"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerY" secondItem="ItS-Wc-tYG" secondAttribute="centerY" id="Agz-KK-bjo"/>
                                     <constraint firstAttribute="height" constant="200" id="DXE-Ps-FUi"/>
+                                    <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerX" secondItem="ItS-Wc-tYG" secondAttribute="centerX" id="dit-tN-HS7"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGV-rS-ebx" userLabel="Playback Button">
@@ -87,6 +95,7 @@
                         <viewLayoutGuide key="safeArea" id="b0f-Nt-vuN"/>
                     </view>
                     <connections>
+                        <outlet property="playImage" destination="TsJ-GY-xHw" id="Q4k-hD-ibe"/>
                         <outlet property="playerContainer" destination="ItS-Wc-tYG" id="Zqg-LB-jir"/>
                     </connections>
                 </viewController>
@@ -95,4 +104,7 @@
             <point key="canvasLocation" x="962" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+    </resources>
 </document>

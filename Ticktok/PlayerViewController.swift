@@ -12,6 +12,7 @@ import AVKit
 class PlayerViewController: UIViewController {
     
     @IBOutlet weak var playerContainer: UIView!
+    @IBOutlet weak var playImage: UIImageView!
     
     var videoURL:URL = URL(string: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4")!
     var player:AVPlayer! // 영상 플레이어
@@ -40,7 +41,15 @@ class PlayerViewController: UIViewController {
         
         // 자동 시작
         player.play()
+        
+        // 자동 반복 설정
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: self.player.currentItem, queue: .main) { [weak self] _ in
+            self?.player?.seek(to: CMTime.zero)
+            self?.player?.play()
+        }
+        
     }
+    
     
     @IBAction func togglePlay(_ sender: Any) {
         if isPlaying {
