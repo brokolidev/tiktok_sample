@@ -7,24 +7,47 @@
 //
 
 import UIKit
+import AVKit
 
 class PlayerViewController: UIViewController {
+    
+    @IBOutlet weak var playerContainer: UIView!
+    
+    var videoURL:URL = URL(string: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4")!
+    var player:AVPlayer! // 영상 플레이어
+    var isPlaying = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        // 비디오 로드
+        self.player = AVPlayer(url: videoURL)
+        let playerLayer = AVPlayerLayer(player: self.player)
+        let vx = self.playerContainer.frame.size.width
 
-    /*
-    // MARK: - Navigation
+        // 4:3 or 16:9
+        let vx2 = ceil( vx * 9 / 16) + 5
+        let vx3 = CGRect(x: self.playerContainer.frame.origin.x, y: self.playerContainer.frame.origin.y, width: self.playerContainer.frame.size.width, height: vx2)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // disable autolayout
+        self.playerContainer.translatesAutoresizingMaskIntoConstraints = true
+        self.playerContainer.frame = vx3
+
+        playerLayer.frame = self.playerContainer.bounds
+        self.playerContainer.layer.addSublayer(playerLayer)
+        
+        // 자동 시작
+        player.play()
     }
-    */
-
+    
+    @IBAction func togglePlay(_ sender: Any) {
+        if isPlaying {
+            player.pause()
+        } else {
+            player.play()
+        }
+        isPlaying.toggle()
+    }
 }
