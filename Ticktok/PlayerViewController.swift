@@ -66,7 +66,14 @@ class PlayerViewController: UIViewController {
 //    }
     
     @IBAction func toggleChatting(_ sender: Any) {
-        print("toggle chatting")
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ChatViewController") as? ChatViewController
+        vc?.modalPresentationStyle = .overFullScreen
+        self.present(vc!, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func shareVideo(_ sender: Any) {
+        print("share video")
     }
     
     @IBAction func togglePlay(_ sender: Any) {

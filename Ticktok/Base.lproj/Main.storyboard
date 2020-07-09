@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HHo-C1-y8I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -52,7 +52,7 @@
         <!--Player View Controller-->
         <scene sceneID="5e3-qm-k7k">
             <objects>
-                <viewController id="HHo-C1-y8I" customClass="PlayerViewController" customModule="Ticktok" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlayerViewController" id="HHo-C1-y8I" customClass="PlayerViewController" customModule="Ticktok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FII-k8-vOL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,9 +85,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-lf-kwM" userLabel="Share Button">
                                 <rect key="frame" x="372.5" y="703" width="21" height="22"/>
                                 <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="shareVideo:" destination="HHo-C1-y8I" eventType="touchUpInside" id="LYY-B7-H2g"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="b0f-Nt-vuN" firstAttribute="trailing" secondItem="WGV-rS-ebx" secondAttribute="trailing" id="0ca-Sk-7Re"/>
                             <constraint firstItem="WGV-rS-ebx" firstAttribute="leading" secondItem="b0f-Nt-vuN" secondAttribute="leading" id="6an-No-Jhd"/>
@@ -117,10 +120,92 @@
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="128.57142857142856"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="XNa-Va-VbE">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="NlQ-la-d8q" customClass="ChatViewController" customModule="Ticktok" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JHh-Hk-xvI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6a-6F-wa6" userLabel="Transparent Button">
+                                <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="cEc-05-Kbr"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="transparentBtn:" destination="NlQ-la-d8q" eventType="touchUpInside" id="AT4-BN-MfT"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h1S-61-Oq7">
+                                <rect key="frame" x="0.0" y="179" width="414" height="633"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-hP-gF1" userLabel="Comment Bar">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WOp-we-3lB"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS0-2h-c62" userLabel="Title Bar">
+                                <rect key="frame" x="0.0" y="144" width="414" height="35"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live 채팅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-Sb-fkv">
+                                        <rect key="frame" x="174.5" y="7" width="65" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKY-lU-yux" userLabel="Cancel Button">
+                                        <rect key="frame" x="386" y="5.5" width="18" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="closeModal:" destination="NlQ-la-d8q" eventType="touchUpInside" id="7v0-88-UMA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pmT-Sb-fkv" firstAttribute="centerX" secondItem="aS0-2h-c62" secondAttribute="centerX" id="56H-hi-eEa"/>
+                                    <constraint firstAttribute="height" constant="35" id="BMa-j1-C7q"/>
+                                    <constraint firstAttribute="trailing" secondItem="BKY-lU-yux" secondAttribute="trailing" constant="10" id="HWR-Ta-2OA"/>
+                                    <constraint firstItem="BKY-lU-yux" firstAttribute="centerY" secondItem="pmT-Sb-fkv" secondAttribute="centerY" id="SuM-mm-6jb"/>
+                                    <constraint firstItem="pmT-Sb-fkv" firstAttribute="centerY" secondItem="aS0-2h-c62" secondAttribute="centerY" id="fs3-dr-wfi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="C6a-6F-wa6" firstAttribute="leading" secondItem="H4c-DK-661" secondAttribute="leading" id="Bjc-LX-TYu"/>
+                            <constraint firstItem="2M4-hP-gF1" firstAttribute="leading" secondItem="H4c-DK-661" secondAttribute="leading" id="Jpg-w4-2jm"/>
+                            <constraint firstItem="aS0-2h-c62" firstAttribute="top" secondItem="C6a-6F-wa6" secondAttribute="bottom" id="PdE-Zc-dTS"/>
+                            <constraint firstItem="aS0-2h-c62" firstAttribute="centerX" secondItem="C6a-6F-wa6" secondAttribute="centerX" id="QZc-xc-X9N"/>
+                            <constraint firstItem="H4c-DK-661" firstAttribute="trailing" secondItem="aS0-2h-c62" secondAttribute="trailing" id="RYZ-4U-sRa"/>
+                            <constraint firstItem="H4c-DK-661" firstAttribute="trailing" secondItem="h1S-61-Oq7" secondAttribute="trailing" id="Uwu-gf-l8Q"/>
+                            <constraint firstItem="h1S-61-Oq7" firstAttribute="leading" secondItem="H4c-DK-661" secondAttribute="leading" id="VjS-gG-DUS"/>
+                            <constraint firstItem="C6a-6F-wa6" firstAttribute="top" secondItem="H4c-DK-661" secondAttribute="top" id="X95-ug-tfY"/>
+                            <constraint firstItem="2M4-hP-gF1" firstAttribute="top" secondItem="h1S-61-Oq7" secondAttribute="bottom" id="b2O-SK-hhc"/>
+                            <constraint firstItem="H4c-DK-661" firstAttribute="trailing" secondItem="2M4-hP-gF1" secondAttribute="trailing" id="fvX-tl-IYE"/>
+                            <constraint firstItem="h1S-61-Oq7" firstAttribute="top" secondItem="aS0-2h-c62" secondAttribute="bottom" id="mpi-9B-XB4"/>
+                            <constraint firstItem="H4c-DK-661" firstAttribute="trailing" secondItem="C6a-6F-wa6" secondAttribute="trailing" id="oxX-fs-n5d"/>
+                            <constraint firstItem="aS0-2h-c62" firstAttribute="leading" secondItem="H4c-DK-661" secondAttribute="leading" id="sTW-xg-S8W"/>
+                            <constraint firstItem="H4c-DK-661" firstAttribute="bottom" secondItem="2M4-hP-gF1" secondAttribute="bottom" id="uXU-6u-Qy1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H4c-DK-661"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i1C-NQ-6TH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.9565217391305" y="128.57142857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
         <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>

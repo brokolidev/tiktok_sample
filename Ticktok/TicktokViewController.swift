@@ -13,6 +13,9 @@ class TicktokViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PlayerViewController") as? PlayerViewController
+        self.addChild(vc!)
+        self.view.addSubview(vc!.view)
     }
 
 
