@@ -13,16 +13,17 @@ class PlayerViewController: UIViewController {
     
     @IBOutlet weak var playerContainer: UIView!
     @IBOutlet weak var playImage: UIImageView!
-    
+        
     var videoURL:URL = URL(string: "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4")!
     var player:AVPlayer! // 영상 플레이어
     var isPlaying = true
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         // 비디오 로드
         self.player = AVPlayer(url: videoURL)
         let playerLayer = AVPlayerLayer(player: self.player)
@@ -35,6 +36,9 @@ class PlayerViewController: UIViewController {
         // disable autolayout
         self.playerContainer.translatesAutoresizingMaskIntoConstraints = true
         self.playerContainer.frame = vx3
+        
+        // 플레이 버튼 숨기기
+        playImage.isHidden = true
 
         playerLayer.frame = self.playerContainer.bounds
         self.playerContainer.layer.addSublayer(playerLayer)
@@ -47,15 +51,31 @@ class PlayerViewController: UIViewController {
             self?.player?.seek(to: CMTime.zero)
             self?.player?.play()
         }
-        
     }
     
+//    private func overlayPlayBtn() {
+//
+//        let buttonLayer = CALayer()
+//        buttonLayer.frame = playerContainer.bounds
+//        buttonLayer.contents = playImage
+//        buttonLayer.contentsGravity = .center
+//        buttonLayer.magnificationFilter = .linear
+//
+//        playerContainer.layer.addSublayer(buttonLayer)
+//
+//    }
+    
+    @IBAction func toggleChatting(_ sender: Any) {
+        print("toggle chatting")
+    }
     
     @IBAction func togglePlay(_ sender: Any) {
         if isPlaying {
             player.pause()
+            playImage.isHidden = false
         } else {
             player.play()
+            playImage.isHidden = true
         }
         isPlaying.toggle()
     }

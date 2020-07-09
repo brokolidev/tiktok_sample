@@ -59,52 +59,68 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ItS-Wc-tYG" userLabel="Player Container">
                                 <rect key="frame" x="0.0" y="353" width="414" height="200"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TsJ-GY-xHw">
-                                        <rect key="frame" x="199.5" y="91.5" width="15" height="16.5"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerY" secondItem="ItS-Wc-tYG" secondAttribute="centerY" id="Agz-KK-bjo"/>
                                     <constraint firstAttribute="height" constant="200" id="DXE-Ps-FUi"/>
-                                    <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerX" secondItem="ItS-Wc-tYG" secondAttribute="centerX" id="dit-tN-HS7"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TsJ-GY-xHw">
+                                <rect key="frame" x="194" y="439" width="26.5" height="29"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGV-rS-ebx" userLabel="Playback Button">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <connections>
                                     <action selector="togglePlay:" destination="HHo-C1-y8I" eventType="touchUpInside" id="akW-Kk-DrE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayY-MQ-d67" userLabel="Chatting Button">
+                                <rect key="frame" x="372" y="740" width="22" height="22"/>
+                                <state key="normal" image="message.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="toggleChatting:" destination="HHo-C1-y8I" eventType="touchUpInside" id="00X-S7-6MS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7G-lf-kwM" userLabel="Share Button">
+                                <rect key="frame" x="372.5" y="703" width="21" height="22"/>
+                                <state key="normal" image="arrowshape.turn.up.right.fill" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="b0f-Nt-vuN" firstAttribute="trailing" secondItem="WGV-rS-ebx" secondAttribute="trailing" id="0ca-Sk-7Re"/>
                             <constraint firstItem="WGV-rS-ebx" firstAttribute="leading" secondItem="b0f-Nt-vuN" secondAttribute="leading" id="6an-No-Jhd"/>
+                            <constraint firstItem="C7G-lf-kwM" firstAttribute="centerX" secondItem="ayY-MQ-d67" secondAttribute="centerX" id="7po-6B-45V"/>
                             <constraint firstItem="WGV-rS-ebx" firstAttribute="centerY" secondItem="FII-k8-vOL" secondAttribute="centerY" id="ASK-C0-Mh8"/>
+                            <constraint firstItem="ayY-MQ-d67" firstAttribute="top" secondItem="C7G-lf-kwM" secondAttribute="bottom" constant="15" id="EX4-fj-ofF"/>
                             <constraint firstItem="b0f-Nt-vuN" firstAttribute="trailing" secondItem="ItS-Wc-tYG" secondAttribute="trailing" id="EZ0-lc-6d9"/>
+                            <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerX" secondItem="ItS-Wc-tYG" secondAttribute="centerX" id="Tg2-Iw-PvG"/>
                             <constraint firstItem="WGV-rS-ebx" firstAttribute="centerX" secondItem="FII-k8-vOL" secondAttribute="centerX" id="VMG-lI-lr6"/>
+                            <constraint firstItem="b0f-Nt-vuN" firstAttribute="bottom" secondItem="ayY-MQ-d67" secondAttribute="bottom" constant="100" id="XHa-bI-CY2"/>
                             <constraint firstItem="ItS-Wc-tYG" firstAttribute="centerX" secondItem="b0f-Nt-vuN" secondAttribute="centerX" id="Yuu-LY-6KT"/>
+                            <constraint firstItem="TsJ-GY-xHw" firstAttribute="centerY" secondItem="ItS-Wc-tYG" secondAttribute="centerY" id="gl1-fR-N5E"/>
                             <constraint firstItem="ItS-Wc-tYG" firstAttribute="leading" secondItem="b0f-Nt-vuN" secondAttribute="leading" id="kRo-eb-Xvg"/>
                             <constraint firstItem="ItS-Wc-tYG" firstAttribute="centerY" secondItem="b0f-Nt-vuN" secondAttribute="centerY" id="mRO-Wg-cJQ"/>
                             <constraint firstItem="WGV-rS-ebx" firstAttribute="top" secondItem="b0f-Nt-vuN" secondAttribute="top" id="o6y-V4-O6a"/>
                             <constraint firstItem="b0f-Nt-vuN" firstAttribute="bottom" secondItem="WGV-rS-ebx" secondAttribute="bottom" id="pbD-rZ-C0j"/>
+                            <constraint firstItem="b0f-Nt-vuN" firstAttribute="trailing" secondItem="ayY-MQ-d67" secondAttribute="trailing" constant="20" id="vcg-0k-sCH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b0f-Nt-vuN"/>
                     </view>
                     <connections>
-                        <outlet property="playImage" destination="TsJ-GY-xHw" id="Q4k-hD-ibe"/>
+                        <outlet property="playImage" destination="TsJ-GY-xHw" id="0qY-hW-tUM"/>
                         <outlet property="playerContainer" destination="ItS-Wc-tYG" id="Zqg-LB-jir"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2aW-03-rAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="962" y="129"/>
+            <point key="canvasLocation" x="960.86956521739137" y="128.57142857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.right.fill" catalog="system" width="128" height="106"/>
+        <image name="message.fill" catalog="system" width="128" height="113"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
     </resources>
 </document>
