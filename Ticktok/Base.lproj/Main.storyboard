@@ -137,17 +137,6 @@
                                     <action selector="transparentBtn:" destination="NlQ-la-d8q" eventType="touchUpInside" id="AT4-BN-MfT"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h1S-61-Oq7">
-                                <rect key="frame" x="0.0" y="179" width="414" height="633"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-hP-gF1" userLabel="Comment Bar">
-                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="WOp-we-3lB"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aS0-2h-c62" userLabel="Title Bar">
                                 <rect key="frame" x="0.0" y="144" width="414" height="35"/>
                                 <subviews>
@@ -176,6 +165,17 @@
                                     <constraint firstItem="pmT-Sb-fkv" firstAttribute="centerY" secondItem="aS0-2h-c62" secondAttribute="centerY" id="fs3-dr-wfi"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h1S-61-Oq7">
+                                <rect key="frame" x="0.0" y="179" width="414" height="633"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2M4-hP-gF1" userLabel="Comment Bar">
+                                <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WOp-we-3lB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -196,6 +196,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="H4c-DK-661"/>
                     </view>
+                    <connections>
+                        <outlet property="titleView" destination="aS0-2h-c62" id="iZV-Ng-gUX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i1C-NQ-6TH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

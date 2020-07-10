@@ -9,9 +9,13 @@
 import UIKit
 
 class ChatViewController: UIViewController {
-
+    @IBOutlet weak var titleView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleView.layer.cornerRadius = 10
+        titleView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
     }
     
     
